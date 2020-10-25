@@ -1,0 +1,26 @@
+body {
+  background-color: #ebcb8b;
+}
+
+.text {
+  color: #2e3440;
+}
+
+#welcome_text {
+  margin-top: 3%;
+}
+
+#avatar {
+  margin: 3%;
+  width: 150px;
+  height: 150px;
+}
+
+#welcome_page_input {
+  align-items: center;
+}
+
+button {
+  margin: 3%;
+  background-color: #88c0d0;
+}
