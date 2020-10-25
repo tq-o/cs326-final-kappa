@@ -32,6 +32,11 @@
     background: linear-gradient(top, #ebf7e9, #ebf7e9);
 }
 
+.centering {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 #login-icon {
     color: #61c954;
     width: 100px;
