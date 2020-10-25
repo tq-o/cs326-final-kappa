@@ -1,4 +1,4 @@
-.login-page {
+.background {
     background-image: url(../images/bg-login.jpg);
     width: 100%;
     min-height: 100vh;
@@ -10,7 +10,6 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 15px;
 
     background-repeat: no-repeat;
     background-position: center;
@@ -19,17 +18,18 @@
     z-index: 1;
 }
 
-.login-box {
-    width: 500px;
+.wrapper {
+    width: 85%;
+    height: 95vh;
     border-radius: 10px;
     overflow: hidden;
     padding: 55px 55px 37px 55px;
 
-    background: #9152f8;
-    background: -webkit-linear-gradient(top, #61c954, #44b2dd);
-    background: -o-linear-gradient(top, #61c954, #44b2dd);
-    background: -moz-linear-gradient(top, #61c954, #44b2dd);
-    background: linear-gradient(top, #61c954, #44b2dd);
+    background: #fff;
+    background: -webkit-linear-gradient(top, #ebf7e9, #cddce2);
+    background: -o-linear-gradient(top, #ebf7e9, #ebf7e9);
+    background: -moz-linear-gradient(top, #ebf7e9, #ebf7e9);
+    background: linear-gradient(top, #ebf7e9, #ebf7e9);
 }
 
 #login-icon {
