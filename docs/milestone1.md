@@ -17,3 +17,8 @@ Link: https://whimsical.com/EjFT9waUJRwd7FMAuDKeqe <br>
 Please refer to the link it you want to see more clearer comments for each element. The picture below is only for an overview and not include any detailed comments as they cannot be exported. The interaction is shown as the arrows and the color scheme is not official. 
 ![Image of Wireframe](https://github.com/tq-o/cs326-final-kappa/blob/main/docs/kappa%401.25x.png)
 # HTML/CSS/Bootstrap mockups
+![Imange of Log in](https://github.com/tq-o/cs326-final-kappa/blob/main/docs/Capture5.JPG)
+![Image of welcome page](https://github.com/tq-o/cs326-final-kappa/blob/main/docs/Capture.JPG)
+![Image of activities](https://github.com/tq-o/cs326-final-kappa/blob/main/docs/Capture3.JPG)
+![Image of video](https://github.com/tq-o/cs326-final-kappa/blob/main/docs/Capture2.JPG)
+![Image of music](https://github.com/tq-o/cs326-final-kappa/blob/main/docs/Capture4.JPG)
