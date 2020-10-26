@@ -18,7 +18,13 @@ Please refer to the link it you want to see more clearer comments for each eleme
 ![Image of Wireframe](https://github.com/tq-o/cs326-final-kappa/blob/main/docs/kappa%401.25x.png)
 # HTML/CSS/Bootstrap mockups
 ![Imange of Log in](https://github.com/tq-o/cs326-final-kappa/blob/main/docs/Capture5.JPG)
+That is the picture for Log-In page which signal that each users will have their own account and can personalize their choices. 
 ![Image of welcome page](https://github.com/tq-o/cs326-final-kappa/blob/main/docs/Capture.JPG)
+The welcome page will signal users they successfully logged in and will be given direction to the next step.
 ![Image of activities](https://github.com/tq-o/cs326-final-kappa/blob/main/docs/Capture3.JPG)
+The list of activities can be viewed if they chose to pick acitivites on their own. If they want to do the recommended pack, it will skip this page and go on to lead them to activities sections as desmonstrated in wireframe.
 ![Image of video](https://github.com/tq-o/cs326-final-kappa/blob/main/docs/Capture2.JPG)
+This is the representation of video activities for exercising.
 ![Image of music](https://github.com/tq-o/cs326-final-kappa/blob/main/docs/Capture4.JPG)
+This is the representation of singing/listening to music activity. <br>
+More activities will be added after a more robust research and implementation.
