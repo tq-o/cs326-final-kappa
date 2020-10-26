@@ -13,4 +13,7 @@ Thanh Phan <br>
 and from that build the correct steps for them. Based on the number of times they used the app, 
 there will be collected points to unlocked special features (maybe a special song playlist/videos).
 # Wireframes
+Link: https://whimsical.com/EjFT9waUJRwd7FMAuDKeqe <br>
+Please refer to the link it you want to see more clearer comments for each element. The picture below is only for an overview and not include any detailed comments as they cannot be exported. The interaction is shown as the arrows and the color scheme is not official. 
+![Image of Wireframe](https://github.com/tq-o/cs326-final-kappa/blob/main/docs/kappa%401.25x.png)
 # HTML/CSS/Bootstrap mockups
