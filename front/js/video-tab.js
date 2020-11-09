@@ -9,7 +9,7 @@ const video_array = [
 const videoTab = document.getElementById("video-tab");
 
 function getRandomInt(num) {
-  let res = Math.floor(Math.random() * 10000000);
+  const res = Math.floor(Math.random() * 10000000);
   return res % num;
 }
 
