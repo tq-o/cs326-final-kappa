@@ -1,60 +1,60 @@
 .background {
-    background-image: url(../images/bg-login.jpg);
-    width: 100%;
-    min-height: 100vh;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+  background-image: url(../images/bg-login.jpg);
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    z-index: 1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
 }
 
 .wrapper {
-    width: 85%;
-    height: 95vh;
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 55px 55px 37px 55px;
+  width: 85%;
+  height: 95vh;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 55px 55px 37px 55px;
 
-    background: #fff;
-    background: -webkit-linear-gradient(top, #ebf7e9, #cddce2);
-    background: -o-linear-gradient(top, #ebf7e9, #ebf7e9);
-    background: -moz-linear-gradient(top, #ebf7e9, #ebf7e9);
-    background: linear-gradient(top, #ebf7e9, #ebf7e9);
+  background: #fff;
+  background: -webkit-linear-gradient(top, #ebf7e9, #cddce2);
+  background: -o-linear-gradient(top, #ebf7e9, #ebf7e9);
+  background: -moz-linear-gradient(top, #ebf7e9, #ebf7e9);
+  background: linear-gradient(top, #ebf7e9, #ebf7e9);
 }
 
 .centering {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 #login-icon {
-    color: #61c954;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  color: #61c954;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #login-title {
-    font-family: Poppins-Medium;
-    font-size: 30px;
-    color: #fff;
-    line-height: 1.2;
-    text-align: center;
-    text-transform: uppercase;
+  font-family: Poppins-Medium;
+  font-size: 30px;
+  color: #fff;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
 
-    display: block;
+  display: block;
 }
