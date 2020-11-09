@@ -79,9 +79,9 @@ function updatePlaylist(mood) {
   const head = document.getElementById("song-list-head");
   head.innerText = "Here are what we found for you";
   const list = document.getElementById("song-list");
+  list.innerHTML = "";
 
   shuffle(music_array);
-  list.innerHTML = "";
 
   music_array
     .filter((e) => e.mood === mood)
