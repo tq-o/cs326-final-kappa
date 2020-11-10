@@ -1,7 +1,7 @@
 # Members and Division of labor
-Duy Pham: Wireframes, Coding, Report <br>
-Thai On: Wireframes, Coding, Report <br>
-Thanh Phan: Wireframes, Coding, Report <br>
+Duy Pham: New app ideas, Coding <br>
+Thai On: New app ideas, Coding, Report <br>
+Thanh Phan: New app ideas, Coding<br>
 
 # Actions for interface:
 We made some interfaces and some new features.
