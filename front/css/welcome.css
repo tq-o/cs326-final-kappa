@@ -18,7 +18,9 @@
   align-items: center;
 }
 
-.button-background {background-color:#88C0D0;}
+.button-background {
+  background-color: #88c0d0;
+}
 
 button {
   margin: 3%;
@@ -52,10 +54,10 @@ button {
   padding: 55px 55px 37px 55px;
 
   background: #fff;
-  background: -webkit-linear-gradient(top, #E5E9F0, #D8DEE9);
-  background: -o-linear-gradient(top, #E5E9F0, #E5E9F0);
-  background: -moz-linear-gradient(top, #E5E9F0, #E5E9F0);
-  background: linear-gradient(top, #E5E9F0, #E5E9F0);
+  background: -webkit-linear-gradient(top, #e5e9f0, #d8dee9);
+  background: -o-linear-gradient(top, #e5e9f0, #e5e9f0);
+  background: -moz-linear-gradient(top, #e5e9f0, #e5e9f0);
+  background: linear-gradient(top, #e5e9f0, #e5e9f0);
 }
 
 .centering {

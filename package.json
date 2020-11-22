@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "start": "node server/index.js",
-    "lint": "eslint client/ server/"
+    "lint": "eslint front/js/"
   },
   "devDependencies": {
     "eslint": "^7.11.0",

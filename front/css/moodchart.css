@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
   height: 100%;
 }
 
@@ -9,8 +10,6 @@ body {
   align-items: center;
   font-family: "fira-sans-2", Verdana, sans-serif;
 }
-
-
 
 .graph {
 	margin-bottom:1em;
@@ -171,33 +170,33 @@ body {
 }
 
 .wrapper {
-    width: 85%;
-    height: 95vh;
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 55px 55px 37px 55px;
+  width: 85%;
+  height: 95vh;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 55px 55px 37px 55px;
 
-    background: #fff;
-    background: -webkit-linear-gradient(top, #ebf7e9, #cddce2);
-    background: -o-linear-gradient(top, #ebf7e9, #ebf7e9);
-    background: -moz-linear-gradient(top, #ebf7e9, #ebf7e9);
-    background: linear-gradient(top, #ebf7e9, #ebf7e9);
+  background: #fff;
+  background: -webkit-linear-gradient(top, #ebf7e9, #cddce2);
+  background: -o-linear-gradient(top, #ebf7e9, #ebf7e9);
+  background: -moz-linear-gradient(top, #ebf7e9, #ebf7e9);
+  background: linear-gradient(top, #ebf7e9, #ebf7e9);
 }
 
 .centering {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 #login-icon {
-    color: #61c954;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  color: #61c954;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #login-title {
