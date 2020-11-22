@@ -7,23 +7,17 @@ function convertBlobToBase64(blob) {
       resolve(reader.result);
     };
     reader.readAsDataURL(blob);
-
   });
-
 }
-
 
 async function fetchImageAndDisplay() {
   try {
-    const fetchResult = await fetch('https://picsum.photos/id/'+JSON.parse(Math.floor(Math.random()*2000)) +'/1280/800');
-
-    document.getElementById("meme").src = await convertBlobToBase64(await fetchResult.blob());
-
-
+    const fetchResult = await fetch(`https://meme-api.herokuapp.com/gimme`);
+    const json = await fetchResult.json();
+    document.getElementById("meme").src = json.preview[json.preview.length - 1];
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
-
 }
 
 fetchImageAndDisplay();
