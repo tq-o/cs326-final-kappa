@@ -11,7 +11,6 @@ body {
   font-family: "fira-sans-2", Verdana, sans-serif;
 }
 
-
 .graph {
 	margin-bottom:1em;
   font:normal 100%/150% arial,helvetica,sans-serif;
@@ -147,26 +146,27 @@ body {
 			width:4em;
 			margin-left:-2em; /* 1/2 the declared width */
 			opacity:1;
-    }
-
+		}
+	}
+}
 .background {
-  background-image: url(../images/bg-login.jpg);
-  width: 100%;
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+    background-image: url(../images/bg-login.jpg);
+    width: 100%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  z-index: 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
 }
 
 .wrapper {
@@ -200,12 +200,12 @@ body {
 }
 
 #login-title {
-  font-family: Poppins-Medium;
-  font-size: 30px;
-  color: #fff;
-  line-height: 1.2;
-  text-align: center;
-  text-transform: uppercase;
+    font-family: Poppins-Medium;
+    font-size: 30px;
+    color: #fff;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
 
-  display: block;
+    display: block;
 }
