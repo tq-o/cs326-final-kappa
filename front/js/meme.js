@@ -1,8 +1,29 @@
-const proxyurl = "https://cors-anywhere.herokuapp.com/";
-const url = "http://apimeme.com/meme?meme=Simsimi&top=Top+text&bottom=Bottom+text"; // site that doesn’t send Access-Control-*
-fetch(proxyurl + url) // https://cors-anywhere.herokuapp.com/https://example.com
-.then((response) => {
-    console.log("Yes");
-    document.getElementById("meme").src = response;
-})
-.catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
+// Converts any given blob into a base64 encoded string.
+function convertBlobToBase64(blob) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onerror = reject;
+    reader.onload = () => {
+      resolve(reader.result);
+    };
+    reader.readAsDataURL(blob);
+
+  });
+
+}
+
+
+async function fetchImageAndDisplay() {
+  try {
+    const fetchResult = await fetch('https://picsum.photos/id/'+JSON.parse(Math.floor(Math.random()*2000)) +'/1280/800');
+
+    document.getElementById("meme").src = await convertBlobToBase64(await fetchResult.blob());
+
+
+  } catch (error) {
+    console.error(error);
+  }
+
+}
+
+fetchImageAndDisplay();
