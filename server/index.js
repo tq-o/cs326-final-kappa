@@ -1,32 +1,83 @@
-import { createServer } from "http";
-import { parse } from "url";
-import { join } from "path";
-import { writeFile, readFileSync, existsSync } from "fs";
+import dotenv from "dotenv";
+dotenv.config();
 
-createServer(async (req, res) => {
-  const parsed = parse(req.url, true);
-  // If the client did not request an API endpoint, we assume we need to fetch a file.
-  // This is terrible security-wise, since we don't check the file requested is in the same directory.
-  // This will do for our purposes.
-  const filename =
-    parsed.pathname === "/" ? "index.html" : parsed.pathname.replace("/", "");
-  // const path = join("client/", filename);
-  const path = filename;
-  console.log("trying to serve " + path + "...");
-  if (existsSync(path)) {
-    if (filename.endsWith("html")) {
-      res.writeHead(200, { "Content-Type": "text/html" });
-    } else if (filename.endsWith("css")) {
-      res.writeHead(200, { "Content-Type": "text/css" });
-    } else if (filename.endsWith("js")) {
-      res.writeHead(200, { "Content-Type": "text/javascript" });
-    } else {
-      res.writeHead(200);
-    }
-    res.write(readFileSync(path));
-    res.end();
-  } else {
-    res.writeHead(404);
-    res.end();
+import path from "path";
+import express from "express";
+import mongoose from "mongoose";
+
+const app = express();
+const port = 1242;
+
+mongoose.connect(
+  `mongodb://${process.env.DB_ADMIN}:${process.env.DB_PASSWORD}@localhost:27017/relax_app`,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
   }
-}).listen(8080);
+);
+
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", function () {
+  const User = mongoose.model("User", { username: String, password: String });
+
+  console.log("database connedted!");
+  app.use(express.static(path.join(process.cwd(), "client")));
+
+  app.get("/find_users", (req, res) => {
+    User.find(function (err, users) {
+      if (err) {
+        return console.error(err);
+      }
+      res.json({ data: users });
+    });
+  });
+
+  app.get("/login", (req, res) => {
+    const username = req.query.username;
+    const password = req.query.password;
+    User.findOne({ username: username }, "_id password", function (err, user) {
+      if (err) {
+        console.error(err);
+        res.status(500);
+        res.json({ error: "internal error" });
+      }
+      if (user) {
+        if (user.password === password) {
+          res.json({ message: "login successfully", id: user._id });
+        } else {
+          res.status(401);
+          res.json({ error: "username or password is not correct" });
+        }
+      } else {
+        res.status(401);
+        res.json({ error: "username or password is not correct" });
+      }
+    });
+  });
+
+  app.post("/signup", (req, res) => {
+    const username = req.query.username;
+    const password = req.query.password;
+    User.findOne({ username: username }, function (err, user) {
+      if (err) {
+        console.error(err);
+        res.status(500);
+        res.json({ error: "internal error" });
+      }
+      if (user) {
+        res.status(403);
+        res.json({ error: "user already exists" });
+      } else {
+        const user = new User({ username: username, password: password });
+        user.save().then(() => {
+          res.json({ message: "user created" });
+        });
+      }
+    });
+  });
+
+  app.listen(port, () => {
+    console.log(`App listening at http://localhost:${port}`);
+  });
+});
