@@ -29,3 +29,10 @@ DB_PASSWORD=<db_password>
 ```
 
 Also we have to start MongoDB in the background and setup credentials before running the server.
+
+# API endpoints
+
+There are 2 endpoints in this milestone:
+
+1. `/login` take 2 arugments: `username` and `password`
+2. `/signup` take 2 arugments: `username` and `password`
