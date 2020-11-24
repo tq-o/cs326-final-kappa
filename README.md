@@ -6,7 +6,7 @@ This is a web app intends to help already stress student to improve their health
 
 Prerequisite:
   - npm
-  
+
 ```bash
 npm i
 ```
