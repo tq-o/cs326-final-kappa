@@ -1,9 +1,9 @@
-import dotenv from "dotenv";
+const dotenv = require("dotenv");
 dotenv.config();
 
-import path from "path";
-import express from "express";
-import mongoose from "mongoose";
+const path = require("path");
+const express = require("express");
+const mongoose = require("mongoose");
 
 const app = express();
 const port = 8000;
@@ -90,6 +90,37 @@ db.once("open", function () {
     });
   });
 
+  app.get("/:name", (req, res) => {
+    if (
+      [
+        "activities",
+        "musics",
+        "videos",
+        "meme",
+        "moodchart",
+        "moodchart",
+        "welcome",
+      ].includes(req.params.name)
+    ) {
+      if (req.params.name == "activities") {
+        req.params.name = "activities-listing";
+      }
+
+      if (req.params.name == "musics") {
+        req.params.name = "music-listing";
+      }
+
+      if (req.params.name == "videos") {
+        req.params.name = "video-tab";
+      }
+
+      res.sendFile(
+        path.join(__dirname, `../client/html/${req.params.name}.html`)
+      );
+    } else {
+      res.sendFile(path.join(__dirname, `../client/html/404.html`));
+    }
+  });
   app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);
   });

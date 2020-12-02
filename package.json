@@ -1,6 +1,5 @@
 {
   "name": "scrabble",
-  "type": "module",
   "scripts": {
     "start": "node server/index.js",
     "lint": "eslint front/js/"
