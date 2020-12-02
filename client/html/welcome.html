@@ -17,9 +17,53 @@
       href="./fonts/fontawesome-free-5.15.1-web/css/all.css"
       rel="stylesheet"
     />
+
+    <link rel="stylesheet" type="text/css" href="../css/base.css" />
+    <link rel="stylesheet" type="text/css" href="../css/sidebar.css" />
+    <link
+      href="../fonts/fontawesome-free-5.15.1-web/css/all.css"
+      rel="stylesheet"
+    />
+    
   </head>
   <body>
     <div class="background">
+      <button id="sidebar-button"><i class="fas fa-2x fa-bars" id="sidebar-icon"></i></button>
+      <nav id="sidebar">
+        <div id="dismiss">
+          <i class="fas fa-arrow-left"></i>
+        </div>
+
+        <div class="sidebar-header">
+            <h3>Menu</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+          <p>Welcome User's name</p>
+          <li>
+            <a href="activities">Activities Description</a>
+          </li>
+          <li>
+            <a href="welcome">Welcome</a>
+          </li>
+          <li>
+            <a href="breathe">Breathe</a>
+          </li>
+          <li>
+            <a href="meme">Memes</a>
+          </li>
+          <li>
+            <a href="musics">Musics</a>
+          </li>
+          <li>
+            <a href="moodchart">Mood Chart</a>
+          </li>
+          <li>
+            <a href="videos">Videos</a>
+          </li>
+        </ul>
+      </nav>
+      
       <div class="wrapper centering">
         <div class="d-flex flex-column">
           <h2 id="welcome_text" class="text">WELCOME, [username]</h2>
@@ -58,6 +102,11 @@
           </div>
         </div>
       </div>
+      <div class="overlay"></div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../js/sidebar.js"></script>
   </body>
 </html>
