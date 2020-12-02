@@ -24,7 +24,6 @@ db.once("open", function () {
 
   app.use(
     express.static(path.join(process.cwd(), "client"), {
-      index: false,
       extensions: ["html"],
     })
   );
