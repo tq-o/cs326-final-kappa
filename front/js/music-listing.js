@@ -1,39 +1,48 @@
 const music_array = [
   {
-    name: "A",
+    name: "White Mustang - Lana Del Rey",
     mood: "Sad",
+    l: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/331983187&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
   },
   {
-    name: "B",
+    name: "you broke me first - Tate McRae",
     mood: "Sad",
+    l: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/798660295&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
   },
   {
-    name: "Z",
+    name: "Grenade - Bruno Mars",
     mood: "Sad",
+    l: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/271221115&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
   },
   {
-    name: "C",
+    name: "Go big or go home - American Authors",
     mood: "Happy",
+    l: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/213133041&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
   },
   {
-    name: "D",
+    name: "Thunder - Imagine Dragons",
     mood: "Happy",
+    l: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/361939553&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
   },
   {
-    name: "F",
+    name: "Trololo Song - Mr.Trololo",
     mood: "Happy",
+    l: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/254220736&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
   },
   {
-    name: "E",
+    name: "Shatter Me - Lindsey Stirling",
     mood: "Engaged",
+    l: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/140760102&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
   },
   {
-    name: "G",
+    name: "Pachelbel Canon in D - Solo Piano",
     mood: "Engaged",
+    l: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/29503310&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
   },
   {
-    name: "H",
+    name: "Hall of Fame - TheScript (feat. will.i.am)",
     mood: "Engaged",
+    l: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/270519066&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
   },
 ];
 
@@ -43,7 +52,7 @@ const mood_array = [
   { mood: "Engaged", color: "#B48EAD" },
 ];
 
-const num_song = 2;
+const num_song = 1;
 
 function shuffle(array) {
   let m = array.length;
@@ -77,7 +86,7 @@ mood_array.forEach((e) => {
 
 function updatePlaylist(mood) {
   const head = document.getElementById("song-list-head");
-  head.innerText = "Here are what we found for you";
+  head.innerText = "Here is what we found for you";
   const list = document.getElementById("song-list");
   list.innerHTML = "";
 
@@ -92,5 +101,7 @@ function updatePlaylist(mood) {
       td.innerText = e.name;
       tr.appendChild(td);
       list.append(tr);
+      document.getElementById("here").src = e.l;
     });
+    
 }
