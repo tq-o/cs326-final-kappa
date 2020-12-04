@@ -18,7 +18,18 @@ mongoose.connect(url, {
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", function () {
-  const User = mongoose.model("User", { username: String, password: String });
+  const User = mongoose.model("User", {
+    username: String,
+    password: String,
+    mood: {
+      happy: { type: Number, default: 0 },
+      sad: { type: Number, default: 0 },
+      angry: { type: Number, default: 0 },
+      disgust: { type: Number, default: 0 },
+      fear: { type: Number, default: 0 },
+      surprise: { type: Number, default: 0 },
+    },
+  });
 
   console.log("database connedted!");
 
@@ -37,7 +48,7 @@ db.once("open", function () {
     });
   });
 
-  app.get("/login", (req, res) => {
+  app.post("/login", (req, res) => {
     const username = req.query.username;
     const password = req.query.password;
     User.findOne({ username: username }, "_id password", function (err, user) {
@@ -83,43 +94,89 @@ db.once("open", function () {
           password: password,
         });
         user.save().then(() => {
-          res.json({ message: "user created" });
+          res.json({ message: "user created", id: user._id });
         });
       }
     });
   });
 
-  app.get("/:name", (req, res) => {
-    if (
-      [
-        "activities",
-        "musics",
-        "videos",
-        "meme",
-        "moodchart",
-        "breathe",
-        "welcome",
-      ].includes(req.params.name)
-    ) {
-      if (req.params.name == "activities") {
-        req.params.name = "activities-listing";
+  app.post("/mood", (req, res) => {
+    const username = req.query.username;
+    User.findOne({ username: username }, function (err, user) {
+      if (err) {
+        console.error(err);
+        res.status(500);
+        res.json({ error: "internal error" });
       }
-
-      if (req.params.name == "musics") {
-        req.params.name = "music-listing";
+      if (user) {
+        user.mood = {
+          happy: parseInt(req.query.happy || 0),
+          sad: parseInt(req.query.sad || 0),
+          angry: parseInt(req.query.angry || 0),
+          disgust: parseInt(req.query.disgust || 0),
+          fear: parseInt(req.query.fear || 0),
+          surprise: parseInt(req.query.surprise || 0),
+        };
+        user.save().then(() => {
+          res.json({ message: "update completed", id: user._id });
+        });
+      } else {
+        res.status(403);
+        res.json({ error: `there is no username ${username}` });
       }
-
-      if (req.params.name == "videos") {
-        req.params.name = "video-tab";
-      }
-
-      res.sendFile(
-        path.join(__dirname, `../client/html/${req.params.name}.html`)
-      );
-    } else {
-      res.sendFile(path.join(__dirname, `../client/html/404.html`));
-    }
+    });
   });
+
+  app.get("/mood", (req, res) => {
+    const username = req.query.username;
+
+    User.findOne({ username: username }, function (err, user) {
+      if (err) {
+        console.error(err);
+        res.status(500);
+        res.json({ error: "internal error" });
+      }
+      if (user) {
+        user.save().then(() => {
+          res.json(user.mood);
+        });
+      } else {
+        res.status(403);
+        res.json({ error: `there is no username ${username}` });
+      }
+    });
+  });
+  // app.get("/:name", (req, res) => {
+  //   if (
+  //     [
+  //       "activities",
+  //       "musics",
+  //       "videos",
+  //       "meme",
+  //       "moodchart",
+  //       "breathe",
+  //       "welcome",
+  //     ].includes(req.params.name)
+  //   ) {
+  //     if (req.params.name == "activities") {
+  //       req.params.name = "activities-listing";
+  //     }
+
+  //     if (req.params.name == "musics") {
+  //       req.params.name = "music-listing";
+  //     }
+
+  //     if (req.params.name == "videos") {
+  //       req.params.name = "video-tab";
+  //     }
+
+  //     res.sendFile(
+  //       path.join(__dirname, `../client/html/${req.params.name}.html`)
+  //     );
+  //   } else {
+  //     res.sendFile(path.join(__dirname, `../client/html/404.html`));
+  //   }
+  // });
   app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);
   });

@@ -9,9 +9,9 @@ $(document).ready(function () {
     </div>
 
     <ul class="list-unstyled components">
-      <p>Welcome User's name</p>
+      <p>Welcome ${localStorage.getItem("username")}</p>
       <li>
-        <a href="activities">Activities Description</a>
+        <a href="activities-listing">Activities Description</a>
       </li>
       <li>
         <a href="welcome">Welcome</a>
@@ -23,15 +23,17 @@ $(document).ready(function () {
         <a href="meme">Memes</a>
       </li>
       <li>
-        <a href="musics">Musics</a>
+        <a href="music-listing">Musics</a>
       </li>
       <li>
         <a href="moodchart">Mood Chart</a>
       </li>
       <li>
-        <a href="videos">Videos</a>
+        <a href="video-tab">Videos</a>
       </li>
     </ul>
+
+    <button id="logout">Logout</button>
   `);
 
   $("#sidebar").mCustomScrollbar({
@@ -43,6 +45,11 @@ $(document).ready(function () {
     $(".overlay").fadeOut();
   });
 
+  $("#logout").on("click", function () {
+    localStorage.clear("username");
+    window.location.href = "login";
+  });
+
   $("#sidebar-button").on("click", function () {
     $("#sidebar").addClass("active");
     $(".overlay").fadeIn();
@@ -50,3 +57,9 @@ $(document).ready(function () {
     $("a[aria-expanded=true]").attr("aria-expanded", "false");
   });
 });
+
+window.onload = function () {
+  if (localStorage.getItem("username") === null) {
+    window.location.href = "login";
+  }
+};
