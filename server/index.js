@@ -97,7 +97,7 @@ db.once("open", function () {
         "videos",
         "meme",
         "moodchart",
-        "moodchart",
+        "breathe",
         "welcome",
       ].includes(req.params.name)
     ) {
