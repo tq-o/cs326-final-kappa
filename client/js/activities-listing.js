@@ -1,47 +1,31 @@
 const activity_array = [
   {
     activity: "Breathing",
-    function: "#Calm down plz",
+    function: "Let's breathe in and out",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do\
-  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut\
-  enim ad minim veniam, quis nostrud exercitation ullamco laboris\
-  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor\
-  in reprehenderit in voluptate velit esse cillum",
+      "Take a moment, sit back down, and follow the rythm. Breathing is important. Don't forget to breathe!",
   },
   {
     activity: "Music with Mood",
-    function: "Lets relax",
+    function: "Lets relax with music",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do\
-  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut\
-  enim ad minim veniam, quis nostrud exercitation ullamco laboris\
-  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor\
-  in reprehenderit in voluptate velit esse cillum",
-  },
-  {
-    activity: "Exercise",
-    function: "Move your body",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do\
-  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut\
-  enim ad minim veniam, quis nostrud exercitation ullamco laboris\
-  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor\
-  in reprehenderit in voluptate velit esse cillum",
+      "Want some music? We got your back! You will love our suggestions!",
   },
   {
     activity: "Laughing",
-    function: "Let's have some fun",
+    function: "Let's have some fun with memes",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do\
-  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut\
-  enim ad minim veniam, quis nostrud exercitation ullamco laboris\
-  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor\
-  in reprehenderit in voluptate velit esse cillum",
+      "Meme is never dying out. We ahve some of the best for you right here to brighten up your day!",
   },
+  {
+    activity: "Watching",
+    function: "Let's chill with some relaxing videos",
+    description:
+      "Need some thing light to pass by the time? Why not try some videos. It works, as always.",
+  }
 ];
 
-const num_activity = 2;
+const num_activity = 3;
 
 function shuffle(array) {
   let m = array.length;
