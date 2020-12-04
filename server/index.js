@@ -18,7 +18,18 @@ mongoose.connect(url, {
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", function () {
-  const User = mongoose.model("User", { username: String, password: String });
+  const User = mongoose.model("User", {
+    username: String,
+    password: String,
+    mood: {
+      happy: { type: Number, default: 0 },
+      sad: { type: Number, default: 0 },
+      angry: { type: Number, default: 0 },
+      disgust: { type: Number, default: 0 },
+      fear: { type: Number, default: 0 },
+      surprise: { type: Number, default: 0 },
+    },
+  });
 
   console.log("database connedted!");
 
@@ -89,6 +100,52 @@ db.once("open", function () {
     });
   });
 
+  app.post("/mood", (req, res) => {
+    const username = req.query.username;
+    User.findOne({ username: username }, function (err, user) {
+      if (err) {
+        console.error(err);
+        res.status(500);
+        res.json({ error: "internal error" });
+      }
+      if (user) {
+        user.mood = {
+          happy: parseInt(req.query.happy || 0),
+          sad: parseInt(req.query.sad || 0),
+          angry: parseInt(req.query.angry || 0),
+          disgust: parseInt(req.query.disgust || 0),
+          fear: parseInt(req.query.fear || 0),
+          surprise: parseInt(req.query.surprise || 0),
+        };
+        user.save().then(() => {
+          res.json({ message: "update completed", id: user._id });
+        });
+      } else {
+        res.status(403);
+        res.json({ error: `there is no username ${username}` });
+      }
+    });
+  });
+
+  app.get("/mood", (req, res) => {
+    const username = req.query.username;
+
+    User.findOne({ username: username }, function (err, user) {
+      if (err) {
+        console.error(err);
+        res.status(500);
+        res.json({ error: "internal error" });
+      }
+      if (user) {
+        user.save().then(() => {
+          res.json(user.mood);
+        });
+      } else {
+        res.status(403);
+        res.json({ error: `there is no username ${username}` });
+      }
+    });
+  });
   // app.get("/:name", (req, res) => {
   //   if (
   //     [
