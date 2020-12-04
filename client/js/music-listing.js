@@ -2,47 +2,56 @@ const music_array = [
   {
     name: "White Mustang - Lana Del Rey",
     mood: "Sad",
-    l: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/331983187&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+    l:
+      "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/331983187&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
   },
   {
     name: "you broke me first - Tate McRae",
     mood: "Sad",
-    l: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/798660295&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+    l:
+      "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/798660295&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
   },
   {
     name: "Grenade - Bruno Mars",
     mood: "Sad",
-    l: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/271221115&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+    l:
+      "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/271221115&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
   },
   {
     name: "Go big or go home - American Authors",
     mood: "Happy",
-    l: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/213133041&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+    l:
+      "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/213133041&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
   },
   {
     name: "Thunder - Imagine Dragons",
     mood: "Happy",
-    l: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/361939553&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+    l:
+      "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/361939553&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
   },
   {
     name: "Trololo Song - Mr.Trololo",
     mood: "Happy",
-    l: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/254220736&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+    l:
+      "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/254220736&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
   },
   {
     name: "Shatter Me - Lindsey Stirling",
     mood: "Engaged",
-    l: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/140760102&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+    l:
+      "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/140760102&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
   },
   {
     name: "Pachelbel Canon in D - Solo Piano",
     mood: "Engaged",
-    l: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/29503310&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+    l:
+      "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/29503310&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
   },
   {
     name: "Hall of Fame - TheScript (feat. will.i.am)",
     mood: "Engaged",
-    l: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/270519066&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+    l:
+      "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/270519066&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
   },
 ];
 
@@ -103,5 +112,4 @@ function updatePlaylist(mood) {
       list.append(tr);
       document.getElementById("here").src = e.l;
     });
-    
 }
