@@ -1,5 +1,7 @@
 # Relax APP
 
+Project link: https://relax-app-kappa.herokuapp.com/
+
 This is a web app intends to help already stress student to improve their health during online class
 
 ## Installation
