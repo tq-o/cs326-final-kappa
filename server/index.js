@@ -6,9 +6,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 
 const app = express();
-const port = 8000;
+const port = 80;
 
-const url = `mongodb+srv://${process.env.DB_ADMIN}:${process.env.DB_PASSWORD}@cluster0.6mduh.mongodb.net/cs326_project?retryWrites=true&w=majority`;
+const url = `mongodb+srv://thanh:umassamherst@cluster0.6mduh.mongodb.net/cs326_project?retryWrites=true&w=majority`;
 
 mongoose.connect(url, {
   useNewUrlParser: true,
