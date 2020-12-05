@@ -33,11 +33,7 @@ db.once("open", function () {
 
   console.log("database connedted!");
 
-  app.use(
-    express.static(path.join(process.cwd(), "client"), {
-      extensions: ["html"],
-    })
-  );
+  app.use(express.static(path.join(process.cwd(), "client")));
 
   app.get("/find_users", (req, res) => {
     User.find(function (err, users) {
@@ -146,37 +142,44 @@ db.once("open", function () {
       }
     });
   });
-  // app.get("/:name", (req, res) => {
-  //   if (
-  //     [
-  //       "activities",
-  //       "musics",
-  //       "videos",
-  //       "meme",
-  //       "moodchart",
-  //       "breathe",
-  //       "welcome",
-  //     ].includes(req.params.name)
-  //   ) {
-  //     if (req.params.name == "activities") {
-  //       req.params.name = "activities-listing";
-  //     }
+  app.get("/:name", (req, res) => {
+    if (
+      [
+        "activities",
+        "musics",
+        "videos",
+        "meme",
+        "moodchart",
+        "breathe",
+        "welcome",
+        "login",
+        "signup",
+        "",
+      ].includes(req.params.name)
+    ) {
+      if (req.params.name == "activities") {
+        req.params.name = "activities-listing";
+      }
 
-  //     if (req.params.name == "musics") {
-  //       req.params.name = "music-listing";
-  //     }
+      if (req.params.name == "") {
+        req.params.name = "login";
+      }
 
-  //     if (req.params.name == "videos") {
-  //       req.params.name = "video-tab";
-  //     }
+      if (req.params.name == "musics") {
+        req.params.name = "music-listing";
+      }
 
-  //     res.sendFile(
-  //       path.join(__dirname, `../client/html/${req.params.name}.html`)
-  //     );
-  //   } else {
-  //     res.sendFile(path.join(__dirname, `../client/html/404.html`));
-  //   }
-  // });
+      if (req.params.name == "videos") {
+        req.params.name = "video-tab";
+      }
+
+      res.sendFile(
+        path.join(__dirname, `../client/html/${req.params.name}.html`)
+      );
+    } else {
+      res.sendFile(path.join(__dirname, `../client/html/404.html`));
+    }
+  });
   app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);
   });
