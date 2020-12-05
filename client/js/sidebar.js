@@ -11,7 +11,7 @@ $(document).ready(function () {
     <ul class="list-unstyled components">
       <p>Welcome ${localStorage.getItem("username")}</p>
       <li>
-        <a href="activities-listing">Activities Description</a>
+        <a href="activities">Activities Description</a>
       </li>
       <li>
         <a href="welcome">Welcome</a>
@@ -23,13 +23,13 @@ $(document).ready(function () {
         <a href="meme">Memes</a>
       </li>
       <li>
-        <a href="music-listing">Musics</a>
+        <a href="musics">Musics</a>
       </li>
       <li>
         <a href="moodchart">Mood Chart</a>
       </li>
       <li>
-        <a href="video-tab">Videos</a>
+        <a href="videos">Videos</a>
       </li>
     </ul>
 
