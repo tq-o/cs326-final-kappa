@@ -142,6 +142,11 @@ db.once("open", function () {
       }
     });
   });
+
+  app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, `../client/html/login.html`));
+  });
+  
   app.get("/:name", (req, res) => {
     if (
       [
@@ -154,15 +159,10 @@ db.once("open", function () {
         "welcome",
         "login",
         "signup",
-        "",
       ].includes(req.params.name)
     ) {
       if (req.params.name == "activities") {
         req.params.name = "activities-listing";
-      }
-
-      if (req.params.name == "") {
-        req.params.name = "login";
       }
 
       if (req.params.name == "musics") {
