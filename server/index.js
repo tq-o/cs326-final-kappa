@@ -180,5 +180,5 @@ db.once("open", function () {
       res.sendFile(path.join(__dirname, `../client/html/404.html`));
     }
   });
-  app.listen(process.env.PORT || 8080);
+  app.listen(process.env.PORT || 8000);
 });
