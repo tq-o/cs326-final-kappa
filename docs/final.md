@@ -13,6 +13,8 @@ Fall 2020
 # Overview:
 Project link: https://cs326-final-project.herokuapp.com/
 
+Video link: https://www.youtube.com/watch?v=Hs2Qsc_kieA
+
 Our application is aiming at stressed people in everyday life no matter from all walks of life. This life is just too harsh and fast-paced for people to have a moment to sit down and have their own time. This app takes such inspiration and hopes to bring about some or even small happiness to lighten up their days. This application also practice simplistic design patterns with a hope that users will find no difficulty using the website. Our application include easy sign-up and log-in allowing different profiles for users. We have a wide range of activities for users to choose from: Breathing in and out, Random meme generator, Mood chart, Listening to music, and Watching videos. We allow a lot of options for users to have a diverse experience using this app, also it is simple enough not to overwhelm them as many official apps out in the market.
 
 # Team Members:
