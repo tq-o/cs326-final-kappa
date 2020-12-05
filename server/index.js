@@ -180,7 +180,5 @@ db.once("open", function () {
       res.sendFile(path.join(__dirname, `../client/html/404.html`));
     }
   });
-  app.listen(port, () => {
-    console.log(`App listening at http://localhost:${port}`);
-  });
+  app.listen(process.env.PORT || 8080);
 });
